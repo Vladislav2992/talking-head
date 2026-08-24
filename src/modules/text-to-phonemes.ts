@@ -1,12 +1,16 @@
-import { ruTextToPhonemes } from './ru-phonemes.js'
-import { esTextToPhonemes } from './es-phonemes.js'
+import { ruTextToPhonemes } from './ru-phonemes'
+import { esTextToPhonemes } from './es-phonemes'
 
-const languages = {
+export const languages = {
   ru: ruTextToPhonemes,
   es: esTextToPhonemes,
 }
+export type TLanguageCode = keyof typeof languages
 
-export function textToPhonemes(str, lang) {
+export function textToPhonemes(
+  str: string,
+  lang: keyof typeof languages,
+): string[] {
   const processor = languages[lang]
 
   if (!processor) {
@@ -16,7 +20,7 @@ export function textToPhonemes(str, lang) {
   return processor(str)
 }
 
-export const phonemesToViseme = {
+export const phonemesToViseme: Record<string, string> = {
   a: 'open',
   o: 'round',
   e: 'round',

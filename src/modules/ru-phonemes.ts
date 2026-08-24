@@ -1,5 +1,4 @@
-
-const lettersToPhonemes = {
+const lettersToPhonemes: Record<string, string[]> = {
   а: ['a'],
   б: ['b'],
   в: ['v'],
@@ -42,30 +41,11 @@ const lettersToPhonemes = {
   я: ['a'],
 }
 
-const vowels = new Set([
-  'а',
-  'е',
-  'ё',
-  'и',
-  'о',
-  'у',
-  'ы',
-  'э',
-  'ю',
-  'я',
-])
+const vowels = new Set(['а', 'е', 'ё', 'и', 'о', 'у', 'ы', 'э', 'ю', 'я'])
 
-const iotated = new Set([
-  'е',
-  'ё',
-  'ю',
-  'я',
-])
+const iotated = new Set(['е', 'ё', 'ю', 'я'])
 
-const serviceLetters = new Set([
-  'ь',
-  'ъ',
-])
+const serviceLetters = new Set(['ь', 'ъ'])
 
 const punctuation = new Set([
   ' ',
@@ -81,7 +61,7 @@ const punctuation = new Set([
   '—',
 ])
 
-export function ruTextToPhonemes(text) {
+export function ruTextToPhonemes(text: string): string[] {
   const chars = [...text.toLowerCase()]
   const result = []
 

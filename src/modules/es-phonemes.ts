@@ -1,4 +1,4 @@
-const lettersToPhonemes = {
+const lettersToPhonemes: Record<string, string[]> = {
   a: ['a'],
   b: ['b'],
   c: ['k'],
@@ -28,20 +28,7 @@ const lettersToPhonemes = {
   z: ['s'],
 }
 
-const vowels = new Set([
-  'a',
-  'e',
-  'i',
-  'o',
-  'u',
-  'á',
-  'é',
-  'í',
-  'ó',
-  'ú',
-])
-
-export function esTextToPhonemes(text) {
+export function esTextToPhonemes(text: string) {
   const chars = [...normalizeSpanishText(text)]
   const result = []
 
@@ -80,10 +67,7 @@ export function esTextToPhonemes(text) {
       continue
     }
 
-    if (
-      char === 'c' &&
-      (next === 'e' || next === 'i')
-    ) {
+    if (char === 'c' && (next === 'e' || next === 'i')) {
       result.push('s')
       i++
       continue
@@ -95,10 +79,7 @@ export function esTextToPhonemes(text) {
       continue
     }
 
-    if (
-      char === 'g' &&
-      (next === 'e' || next === 'i')
-    ) {
+    if (char === 'g' && (next === 'e' || next === 'i')) {
       result.push('h')
       i++
       continue
@@ -143,7 +124,7 @@ export function esTextToPhonemes(text) {
   return result
 }
 
-function normalizeSpanishText(text) {
+function normalizeSpanishText(text: string) {
   return text
     .toLowerCase()
     .replaceAll('á', 'a')

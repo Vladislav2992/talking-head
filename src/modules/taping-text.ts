@@ -1,8 +1,8 @@
 const buble = document.querySelector('.text')
 
-export function tappingText(text, duration = 150) {
+export function tappingText(text: string, duration = 150) {
   const textArr = text.split('')
-  if (!text || !textArr) return
+  if (!text || !textArr || !buble) return
 
   buble.textContent = ''
 

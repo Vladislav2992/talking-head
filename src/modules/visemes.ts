@@ -1,4 +1,10 @@
-export const visemes = {
+export interface IVisemeAnimation {
+  scaleX: number
+  scaleY: number
+  subClass?: string
+}
+
+export const visemes: { [key: string]: IVisemeAnimation } = {
   round: {
     scaleX: 0.9,
     scaleY: 20,
@@ -32,5 +38,5 @@ export const visemes = {
   default: {
     scaleX: 1,
     scaleY: 1,
-  }
+  },
 }
