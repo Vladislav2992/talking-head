@@ -1,4 +1,5 @@
 import './assets/style/style.css'
+import './assets/style/persons.sass'
 import { speak } from './modules/speak'
 import type { TLanguageCode } from './modules/text-to-phonemes'
 import { languages } from './modules/text-to-phonemes'

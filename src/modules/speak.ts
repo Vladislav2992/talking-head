@@ -4,6 +4,9 @@ import { tappingText } from './taping-text'
 import type { TLanguageCode } from './text-to-phonemes'
 
 const mouth = document.querySelector<HTMLElement>('.mouth')
+const defaultMouthRound = mouth
+  ? getComputedStyle(mouth)?.getPropertyValue('--round')
+  : '50%'
 
 export interface IViseme {
   name: string
@@ -42,6 +45,10 @@ function playTimeline(timeline: IViseme[]) {
     setTimeout(() => {
       mouth?.style.setProperty('--scaleX', String(viseme.scaleX))
       mouth?.style.setProperty('--scaleY', String(viseme.scaleY))
+      mouth?.style.setProperty(
+        '--round',
+        viseme.round ?? defaultMouthRound,
+      )
 
       mouth?.classList.remove('teeth', 'tongue')
 

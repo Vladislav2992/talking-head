@@ -43,15 +43,18 @@ body {
   transform: rotate(-7deg) translateY(-10px);
 }
 
-.eyes,
+.hidden {
+  display: none;
+}
+/* .eyes,
 .eyebrows {
   display: flex;
   align-items: center;
   justify-content: space-between;
   margin-bottom: 5px;
-}
+} */
 
-.eye {
+/* .eye {
   width: 50px;
   height: 50px;
   border-radius: 50%;
@@ -59,15 +62,15 @@ body {
   position: relative;
   overflow: hidden;
   animation: blink 9s infinite; 
-}
+} */
 
-.eyebrow {
+/* .eyebrow {
   width: 50px;
   height: 10px;
   background: var(--brown);
   border-radius: 5px;
   transition: transform .2s;
-}
+} */
 
 @keyframes blink {
   0% {
@@ -105,7 +108,7 @@ body {
   }
 }
 
-.eye::before {
+/* .eye::before {
   content: '';
   width: 20px;
   height: 20px;
@@ -114,9 +117,9 @@ body {
   position: absolute;
   top: 6px;
   right: 10px;
-}
+} */
 
-.nose {
+/* .nose {
   width: 50px;
   height: 50px;
   margin: 0 auto;
@@ -134,9 +137,9 @@ body {
   position: absolute;
   top: 0;
   left: -50%;
-}
+} */
 
-.mouth {
+/* .mouth {
   --scaleX: 1;
   --scaleY: 1;
 
@@ -152,7 +155,7 @@ body {
   overflow: hidden;
   transform: scaleX(var(--scaleX)) scaleY(var(--scaleY));
   will-change: transform;
-}
+} */
 
 .mouth::before {
   content: '';
@@ -173,10 +176,10 @@ body {
   top: 0;
   background: var(--white);  
   width: 40px;
-  height: 1.2px;
+  height: 8px;
   transform: translateX(-50%);
   left: 50%;
-  top: -1px;
+  top: -100%;
   transition: all .2s
 }
 

@@ -1,0 +1,114 @@
+@use './_vars' as *
+
+.girl
+  width: 193px
+  height: 195px
+  border-radius: 80px
+  background: $skin-gradient
+  position: relative
+
+  .hair
+    position: absolute
+    width: 140%
+    height: 130%
+    background: $violet
+    border-radius: 50% 50% 30px 30px
+    z-index: -1
+    top: 50%
+    left: 50%
+    transform: translate(-50%, -50%)
+
+  .bangs
+    position: absolute
+    width: 100%
+    height: 46%
+    background: $violet
+    border-radius: 20px
+
+  .ears
+    display: flex
+    justify-content: space-between
+    align-items: center
+    top: 50%
+    left: 50%
+    transform: translateX(-50%)
+    position: absolute
+    width: calc(100% + 30px)
+    z-index: -1
+  .ear
+    width: 30px
+    height: 30px
+    border-radius: 50%
+    &:first-child
+      background: $skin-gradient
+    &:last-child
+      background: $skin-dark
+  
+  .eyebrows
+    display: flex
+    justify-content: space-between
+    align-items: center
+    padding: 0 16%
+    top: 42%
+    z-index: 3
+    position: relative
+    margin-bottom: 44%
+  .eyebrow
+    width: 26px
+    height: 12px
+    border-radius: 20px
+    background: $black
+
+  .eyes
+    display: flex
+    justify-content: space-between
+    align-items: center
+    margin-top: 41%
+    margin-bottom: 2%
+    padding: 0 11%
+  .eye
+    background: $white
+    width: 45px
+    height: 20px
+    border-radius: 20px
+    position: relative
+    &::before
+      content: ''
+      display: block
+      height: 100%
+      aspect-ratio: 1/1
+      background: $black
+      position: absolute
+      bottom: 50%
+      left: 50%
+      transform: translate(-50%, 50%)
+      border-radius: 50%
+
+  .blushes
+    display: flex
+    justify-content: space-between
+    align-items: center
+    margin-bottom: 12%
+    padding: 0 11%
+  .blush
+    width: 30px
+    height: 20px
+    border-radius: 20px
+    background: $pink
+
+  .mouth 
+    --scaleX: 1
+    --scaleY: 1
+    --round: 6px 6px 20px 20px
+    width: 20px
+    height: 10px
+    border-radius: var(--round)
+    background: $black
+    transition: all 0.2s ease-in-out
+    position: absolute
+    top: 125px
+    left: 50%
+    translate: -50% -50%
+    overflow: hidden
+    transform: scaleX(var(--scaleX)) scaleY(var(--scaleY))
+    will-change: transform
